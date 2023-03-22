@@ -1,0 +1,128 @@
+* {
+box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  font-family: sans-serif;
+}
+
+body {
+  background: #add8e6;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 450px;
+  min-height: 650px;
+  border-radius: 16px;
+  border-radius: 26px;
+  background: linear-gradient(145deg, #add8e6, #83c9e0);
+  box-shadow: 5px 5px 10px #66acc5, -5px -5px 10px #c0e9f7;
+}
+
+.title {
+  margin: 40px;
+  min-width: 85%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background-color: #b6ddeb;
+}
+
+.title h3 {
+  color: #0c5770;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.settings {
+  display: flex;
+  flex-direction: row;
+  color: #0c5770;
+  font-size: 28px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  height: 50px;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 30px;
+  font-weight: 600;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.controls button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #f3e5f5;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #add8e6, #83c9e0);
+  box-shadow: 5px 5px 10px #66acc5, -5px -5px 10px #c0e9f7;
+  border: 0;
+  margin: 0 20px 0 20px;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #f3e5f5;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #add8e6, #83c9e0);
+  box-shadow: 5px 5px 10px #66acc5, -5px -5px 10px #c0e9f7;
+  margin-bottom: 20px;
+}
+
+.display h3 {
+  color: #0c5770;
+
+  font-size: 30px;
+  font-weight: 600;
+}
+.time-left { 
+  font-size: 90px;
+  font-weight: 700;
+  color: #0c5770;
+  margin-bottom: 30px;
+}
+
+
