@@ -8,8 +8,12 @@ const Timer = () => {
     const [seconds, setSeconds] = React.useState(0);
     const [timerIsWork, setTimerIsWork] = React.useState(false);
     const [onABreak, setOnABreak] = React.useState(false);
-    let countDown;
+    const [countDown, setCountDown] = React.useState(undefined);
 
+    React.useEffect(() => {
+        console.log('useEffect');   
+    },[countDown]);
+    
     const IncBreakTime = () => {
         if (breakTime<60)
         setBreakTime((prevState) => prevState+1);
@@ -48,17 +52,17 @@ const Timer = () => {
             setTimerIsWork((prevState)=>!prevState);
             console.log('2 timer is work = ',timerIsWork);
             let allSeconds = minutes*60+seconds;
-            countDown = setInterval(() => {
+            setCountDown(setInterval(() => {
                 allSeconds--;
                 if(allSeconds<1){
                     clearInterval(countDown);
                     console.log('stop');
                     StartBreak();
-                }
-                    
-                displayLeftTime(allSeconds);
-                console.log('seconds left: ', allSeconds);   
-            }, 500);
+                };        
+                displayLeftTime(allSeconds);   
+            }, 500));
+            console.log('afterinterval');
+            clearInterval(countDown);
         }
         else {
             console.log('3 timer is work = ',timerIsWork);
@@ -66,7 +70,6 @@ const Timer = () => {
             setTimerIsWork((prevState)=>!prevState);
             console.log('4 timer is work = ',timerIsWork);
         }
-        
     }
     
     const displayLeftTime = (allSeconds) => {
@@ -75,6 +78,7 @@ const Timer = () => {
     }
 
     const StartBreak = () => {
+        clearInterval(countDown);
         if (onABreak === false) {
             console.log('onABreak = ', onABreak);
             console.log('Break started');
@@ -92,7 +96,7 @@ const Timer = () => {
             //setTimerIsWork((prevState) => !prevState);
             setOnABreak((prevState) => !prevState);
         }
-        PlayPause();
+        //PlayPause();
     }
 
     const RESET = () => {
@@ -100,7 +104,7 @@ const Timer = () => {
         setTimerIsWork(false);
         setMinutes(25);
         setSeconds(0);
-        setBreakTime(5)
+        setBreakTime(5);
         setWorkTime(25);
     }
 

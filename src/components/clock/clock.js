@@ -10,8 +10,17 @@ const Clock = () => {
     
     const { breakTime, workTime, IncBreakTime, DecBreakTime, IncWorkTime, DecWorkTime, PlayPause, minutes, seconds, RESET } = Timer();
     
+    const minStyle = () => {
+        let min = minutes;
+        if (min>9) return min;
+        else return ("0"+min);
+    }
 
-
+    const secStyle = () => {
+        let sec = seconds;
+        if (sec>9) return sec;
+        else return ("0"+sec);
+    }
 
     return ( 
         <div className="container" >
@@ -48,7 +57,7 @@ const Clock = () => {
                 <div className="display">
                     <h3>Time left:</h3>
                     <div className="time-left">
-                        {minutes}:{seconds}
+                        {minStyle()}:{secStyle()}
                     </div>    
                     <div className="controls">
                             <button onClick={PlayPause} ><FontAwesomeIcon icon={faPlay} /></button>
